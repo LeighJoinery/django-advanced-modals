@@ -1,6 +1,6 @@
 from ajax_helpers.html_include import SourceBase, pip_version
 
-version = pip_version('django-nested-modals')
+version = pip_version('django-advanced-modals')
 
 
 class DefaultInclude(SourceBase):
