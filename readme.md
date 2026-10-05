@@ -1,13 +1,20 @@
-[![PyPI version](https://badge.fury.io/py/django-nested-modals.svg)](https://badge.fury.io/py/django-nested-modals)
+[![PyPI version](https://img.shields.io/pypi/v/django-advanced-modals)](https://pypi.org/project/django-advanced-modals/)
 
-# django-nested-modals
+# django-advanced-modals
 
 Bootstrap nested modals with AJAX form handling for Django. Modals are class-based views — they handle GET (render the modal) and POST (process buttons/forms) via AJAX, with responses returned as JSON command arrays.
+
+The [django-advance-utils](https://github.com/django-advance-utils) line of Ian Jones's
+[django-nested-modals](https://github.com/jonesim/django-modals), forked so that releases can be cut as
+the downstream libraries and django-advanced-report-builder need them. The Python package is still
+`django_modals`, so existing imports and `INSTALLED_APPS` entries do not change; only the pip name
+does. It depends on [ajax-advanced-helpers](https://github.com/django-advance-utils/ajax-advanced-helpers)
+and [django-advanced-menus](https://github.com/django-advance-utils/django-advanced-menus).
 
 ## Installation
 
 ```bash
-pip install django-nested-modals
+pip install django-advanced-modals
 ```
 
 Add to `INSTALLED_APPS`:
