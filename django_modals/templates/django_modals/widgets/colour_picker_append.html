@@ -37,10 +37,14 @@
                     {% endif %}
                 {% endif %}
                 {% if crispy_appended_text %}
+                    {# The input's own id, which the picker script (colour_picker.html) looks these two up by. A  #}
+                    {# multi form sets it on the widget (id_0_colour) and leaves the field's auto_id as id_colour. #}
+                    {% with field.field.widget.attrs.id|default:field_id as input_id %}
                     <span class="input-group-append">
-                        <span class="input-group-text" id="{{ field_id|function_friendly }}_picker"><i class="fas fa-square" style="font-size: 1.5em;"></i></span>
-                        <span class="input-group-text" id="{{ field_id }}_random" style="cursor: pointer; color: blue;"><i class="fas fa-random"></i></span>
+                        <span class="input-group-text" id="{{ input_id|function_friendly }}_picker"><i class="fas fa-square" style="font-size: 1.5em;"></i></span>
+                        <span class="input-group-text" id="{{ input_id }}_random" style="cursor: pointer; color: blue;"><i class="fas fa-random"></i></span>
                      </span>
+                    {% endwith %}
                 {% endif %}
                 {% if error_text_inline %}
                     {% include 'bootstrap4/layout/field_errors.html' %}
