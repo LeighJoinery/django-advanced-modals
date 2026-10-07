@@ -26,7 +26,7 @@ from .views.demo_mf_formset import MultiFormFormsetView, MultiFormFormsetCompany
 
 
 urlpatterns = [
-    path('modal-redirect/', RedirectView.as_view(pattern_name='basic'), name='django-nested-modals'),
+    path('modal-redirect/', RedirectView.as_view(pattern_name='basic'), name='django-advanced-modals'),
     path('modal/classes/', include('modal_examples.views.basic')),
     path('modal/classes/models/', include('modal_examples.views.model')),
 
