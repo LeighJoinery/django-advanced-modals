@@ -103,8 +103,11 @@ if (typeof django_modal == 'undefined') {
             if (determine_type() === 'popup') {
                 window.close()
             } else {
+                // The hold is what marks the page busy now. Setting ajax_busy as well would set the
+                // flag behind the accessor, which only hidden.bs.modal clears, so a close whose
+                // hidden never came would stay busy however long after the watchdog had let the
+                // hold go -- the stuck queue the watchdog is there to prevent.
                 hold_for_close();
-                ajax_helpers.ajax_busy = true;
                 modal_div().modal('hide');
             }
         }
